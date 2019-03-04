@@ -10,7 +10,7 @@ let msTens = document.querySelector('#msTens');
 
 // Create Start Timer Button
 let button = document.createElement('p');
-button.textContent = 'Start Timer';
+button.textContent = 'Start';
 button.style.border = '1px solid black';
 button.style.padding = '5px';
 button.style.marginLeft = '20px';
@@ -21,12 +21,28 @@ button.style.width = '100px';
 button.style.textAlign = 'center';
 digits.appendChild(button);
 
+// Reset Button
+let resetButton = document.createElement('p');
+resetButton.textContent = 'Reset';
+resetButton.style.border = '1px solid black';
+resetButton.style.padding = '5px';
+resetButton.style.marginLeft = '20px';
+digits.style.display = 'flex';
+digits.style.flexWrap = 'flex-wrap';
+digits.style.justifyContent = 'center';
+resetButton.style.width = '100px';
+resetButton.style.textAlign = 'center';
+digits.appendChild(resetButton);
+
+// Initialize Values
 let secondsOnesDigit = 0;
 let msHundredsDigit = 0;
 
-// Button Click Handler
+// Start Button Click Handler
 button.addEventListener('click', () => {
-    setInterval(() => {
+    let timer = setInterval(run, 10);
+
+    function run() {
         msHundreds.textContent = msHundredsDigit;
         secondOnes.textContent = secondsOnesDigit;
         if(msHundredsDigit < 99) {
@@ -35,5 +51,14 @@ button.addEventListener('click', () => {
             msHundredsDigit = 0;
             secondsOnesDigit++;
         }
-    }, 10)
+    };
+
+    // Reset Handler
+    resetButton.addEventListener('click', () => {
+        clearInterval(timer);
+        secondsOnesDigit = 0;
+        msHundredsDigit = 0;
+        msHundreds.textContent = msHundredsDigit;
+        secondOnes.textContent = secondsOnesDigit;
+    });
 });
