@@ -18,6 +18,7 @@ digits.style.display = 'flex';
 digits.style.flexWrap = 'flex-wrap';
 digits.style.justifyContent = 'center';
 button.style.width = '100px';
+button.style.cursor = 'pointer';
 button.style.textAlign = 'center';
 digits.appendChild(button);
 
@@ -27,11 +28,9 @@ resetButton.textContent = 'Reset';
 resetButton.style.border = '1px solid black';
 resetButton.style.padding = '5px';
 resetButton.style.marginLeft = '20px';
-digits.style.display = 'flex';
-digits.style.flexWrap = 'flex-wrap';
-digits.style.justifyContent = 'center';
 resetButton.style.width = '100px';
 resetButton.style.textAlign = 'center';
+resetButton.style.cursor = 'pointer';
 digits.appendChild(resetButton);
 
 // Initialize Values
