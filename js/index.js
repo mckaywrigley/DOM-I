@@ -89,3 +89,21 @@ p[7].textContent = siteContent.contact.email;
 // Copyright
 p[8].textContent = siteContent.footer.copyright;
 
+// Style Changes
+navItems[0].style.color = 'green';
+navItems[1].style.color = 'green';
+navItems[2].style.color = 'green';
+navItems[3].style.color = 'green';
+navItems[4].style.color = 'green';
+navItems[5].style.color = 'green';
+
+// Add Nav
+var navbar = document.querySelector('nav');
+
+var newNavItem1 = document.createElement('a');
+newNavItem1.innerHTML = 'appendChild';
+navbar.appendChild(newNavItem1);
+
+var newNavItem2 = document.createElement('a');
+newNavItem2.innerHTML = 'Prepend';
+navbar.prepend(newNavItem2);
